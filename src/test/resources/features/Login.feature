@@ -7,12 +7,13 @@ Feature: AzulCRM login page functionality
   Scenario Outline: For all the scenarios
     Given user is on the login page
     When user logs in as "<user>"
-    And user enters "<login>" and "<password>"
+    And user enters "<login>" and "password"
     Then  user should see "<keyword>" in page URL
 
     Examples: all the credentials
-      | user      | login                 | password | keyword    |
-      | HR        | hr23@cydeo.com        | UserUser | (1) Portal |
-      | Marketing | marketing23@cydeo.com | UserUser | Portal     |
-      | Helpdesk  | helpdesk23@cydeo.com  | UserUser | Portal     |
+      | user      | login                 | keyword    |
+      | HR        | hr23@cydeo.com        | (1) Portal |
+      | Marketing | marketing23@cydeo.com | Portal     |
+      | Helpdesk  | helpdesk23@cydeo.com  | Portal     |
+
 

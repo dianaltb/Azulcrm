@@ -26,6 +26,7 @@ public class Login_step_definitions {
 
     @And("user enters {string} and {string}")
     public void user_enters_and(String login, String password) {
+        password = ConfigurationReader.getProperty("password");
         PAGE.login(login, password);
     }
 

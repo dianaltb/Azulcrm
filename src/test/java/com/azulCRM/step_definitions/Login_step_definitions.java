@@ -30,15 +30,15 @@ public class Login_step_definitions {
         }
 
         //send username and password and login
-        BrowserUtils.sleep(5);
+
 
         new LoginPage().login(username, password);
-BrowserUtils.sleep(5);
+
     }
 
     @Given("the user logged in with username as {string} and password as {string}")
     public void the_user_logged_in_with_username_as_and_password_as(String username, String password) {
-        BrowserUtils.sleep(3);
+
         LoginPage loginPage = new LoginPage();
         loginPage.login(username, password);
     }

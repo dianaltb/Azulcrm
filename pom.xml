@@ -22,26 +22,82 @@
             <version>4.33.0</version>
         </dependency>
 
+        <!-- Cucumber with JUnit 4 -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>7.3.2</version>
+            <version>7.22.2</version>
         </dependency>
-
-
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>7.3.2</version>
+            <version>7.22.2</version>
+            <scope>test</scope>
         </dependency>
 
+        <!-- JUnit 4 only -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- AssertJ for assertions -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.24.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Data faker -->
+        <dependency>
+            <groupId>net.datafaker</groupId>
+            <artifactId>datafaker</artifactId>
+            <version>2.4.3</version> <!-- or latest stable version -->
+        </dependency>
+
+        <!-- Apache POI OOXML (for newer Excel formats .xlsx) -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.4.1</version>
+        </dependency>
+
+        <!-- SLF4J API -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.17</version>
+        </dependency>
+
+        <!-- SLF4J Binding for Log4j2 -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j2-impl</artifactId>
+            <version>2.22.1</version>
+        </dependency>
+
+        <!-- Log4j2 Core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.22.1</version>
+        </dependency>
+
+        <!-- Log4j2 API -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.22.1</version>
+        </dependency>
 
         <dependency>
-            <groupId>me.jvt.cucumber</groupId>
-            <artifactId>reporting-plugin</artifactId>
-            <version>7.3.0</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.19.0</version>
         </dependency>
-
 
     </dependencies>
 
@@ -50,18 +106,17 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version>
-
+                <version>3.5.3</version> <!-- 3.5.3 is ok too -->
                 <configuration>
-                    <parallel>methods</parallel>
+                    <parallel>methods</parallel>      <!-- run test methods in parallel -->
+                    <threadCount>4</threadCount>      <!-- number of threads -->
                     <useUnlimitedThreads>false</useUnlimitedThreads>
-                    <threadCount>4</threadCount>
-
-                    <perCoreThreadCount>false</perCoreThreadCount>
-                    <!--    <testFailureIgnore>true</testFailureIgnore> -->
+                    <testFailureIgnore>true</testFailureIgnore>
                     <includes>
-                        <include>**/CukesRunner*.java</include>
+                        <include>**/*RunnerTest.java</include>  <!-- your test runner pattern -->
                     </includes>
+                    <forkCount>1</forkCount>          <!-- use 1 fork for simplicity -->
+                    <reuseForks>true</reuseForks>
                 </configuration>
             </plugin>
         </plugins>

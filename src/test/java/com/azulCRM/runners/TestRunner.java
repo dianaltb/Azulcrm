@@ -6,16 +6,15 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {
+        plugin = {"pretty",
                 "html:target/cucumber-reports.html",
-                "rerun:target/rerun.txt",
-                "me.jvt.cucumber.report.PrettyReports:target/cucumber"
+                "rerun:target/rerun.txt"
         },
         features = "src/test/resources/features",
         glue = "com/azulCRM/step_definitions",
-        dryRun = false,
         tags = "@login",
-        publish = true //generating a report with public link
+        dryRun = false,
+        publish = false
 )
-public class CukesRunner {}
+public class TestRunner {}
 

@@ -1,11 +1,11 @@
-package com.Sprint2G10.step_definitions;
+package com.azulCRM.step_definitions;
 
 
 
 
-import com.Sprint2G10.utilities.BrowserUtils;
-import com.Sprint2G10.utilities.ConfigurationReader;
-import com.Sprint2G10.utilities.Driver;
+import com.azulCRM.utilities.BrowserUtils;
+import com.azulCRM.utilities.ConfigurationReader;
+import com.azulCRM.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -49,7 +49,7 @@ public class Hooks {
 
 
 
-        BrowserUtils.sleep(2);
+        BrowserUtils.sleep(10);
         Driver.closeDriver();
 
     }

@@ -1,4 +1,4 @@
-package com.Sprint2G10.runners;
+package com.azulCRM.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -12,9 +12,9 @@ import org.junit.runner.RunWith;
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"
         },
         features = "src/test/resources/features",
-        glue = "com/Sprint2G10/step_definitions",
+        glue = "com/azulCRM/step_definitions",
         dryRun = false,
-        tags = "@wip",
+        tags = "@login",
         publish = true //generating a report with public link
 )
 public class CukesRunner {}

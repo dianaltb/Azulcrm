@@ -1,4 +1,4 @@
-package com.Sprint2G10.utilities;
+package com.azulCRM.utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

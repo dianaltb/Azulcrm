@@ -1,4 +1,4 @@
-package com.Sprint2G10.pages;
+package com.azulCRM.pages;
 
 
 
@@ -6,8 +6,8 @@ package com.Sprint2G10.pages;
 
 
 
-import com.Sprint2G10.utilities.BrowserUtils;
-import com.Sprint2G10.utilities.Driver;
+import com.azulCRM.utilities.BrowserUtils;
+import com.azulCRM.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;

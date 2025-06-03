@@ -1,4 +1,4 @@
-package com.Sprint2G10.utilities;
+package com.azulCRM.utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;

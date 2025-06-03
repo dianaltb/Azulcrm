@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         glue = "com/azulCRM/step_definitions",
         tags = "@login",
         dryRun = false,
-        publish = false
+        publish = true
 )
 public class TestRunner {}
 

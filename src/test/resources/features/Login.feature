@@ -1,23 +1,18 @@
 @login
-Feature: Users should be able to login
+Feature: AzulCRM login page functionality
 
-  Background: User is already in the log in page
-    Given the user is on the login page
+  Agile story: As a user I should be able to login with valid credentials to different accounts.
+  Accounts are: HR, Helpdesk, Marketing.
 
-  #@hr
-  Scenario: Verify login with hr credentials
-    Given the user logged in as "<hr>"
-    Given the user logged in with username as "hr_username" and password as "UserUser"
-#@helpDesk
-  Scenario: Verify login with help_desk credentials
-    Given the user logged in as "<help_desk>"
-    Given the user logged in with username as "help_desk_username" and password as "UserUser"
+  Scenario Outline: For all the scenarios
+    Given user is on the login page
+    When user logs in as "<user>"
+    And user enters "<login>" and "<password>"
+    Then  user should see "<keyword>" in page URL
 
-#@marketing
-
-Scenario: Verify login with marketing credentials
-  Given the user logged in as "<marketing>"
-  Given the user logged in with username as "marketing_username" and password as "UserUser"
-
-# you can use one of the given step here
+    Examples: all the credentials
+      | user      | login                 | password | keyword    |
+      | HR        | hr23@cydeo.com        | UserUser | (1) Portal |
+      | Marketing | marketing23@cydeo.com | UserUser | Portal     |
+      | Helpdesk  | helpdesk23@cydeo.com  | UserUser | Portal     |
 

@@ -15,20 +15,15 @@ public class LoginPage {
     @FindBy(name ="USER_LOGIN")
     public WebElement userName;
 
-
     @FindBy(name="USER_PASSWORD")
     public WebElement password;
 
     @FindBy(xpath = "//input[@class='login-btn']")
     public WebElement submit;
 
-
     public void login(String userNameStr, String passwordStr) {
         userName.sendKeys(userNameStr);
         password.sendKeys(passwordStr);
         submit.click();
-        // verification that we logged
-
     }
-
 }

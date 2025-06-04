@@ -18,12 +18,11 @@ public class Profile_step_definitions {
     private final LoginPage loginPage = new LoginPage();
     private final ProfilePage profilePage = new ProfilePage();
     private final String email = ConfigurationReader.getProperty("hr_username");
-    private final String password = ConfigurationReader.getProperty("password");
 
     @Given("user is logged into main page")
     public void user_is_logged_into_main_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        loginPage.login(email, password);
+        loginPage.login("hr");
     }
     @When("user clicks on his email in the top right corner")
     public void user_clicks_on_his_email_in_the_top_right_corner() {

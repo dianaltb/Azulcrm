@@ -8,32 +8,29 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class Login_step_definitions {
-    private final LoginPage PAGE = new LoginPage();
+    LoginPage loginPage=new LoginPage();
     private String expectedTitle;
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        System.out.println("Login to app in Before Method");
         expectedTitle = "Authorization";
         BrowserUtils.verifyTitle(expectedTitle);
     }
 
     @When("user logs in as {string}")
     public void userLogsInAs(String user) {
+//send username and password and login
+        loginPage.login(user);
     }
 
-    @And("user enters {string} and {string}")
-    public void user_enters_and(String login, String password) {
-        password = ConfigurationReader.getProperty("password");
-        PAGE.login(login, password);
-    }
-
-    @Then("user should see {string} in page URL")
-    public void user_should_see_in_page_url(String keyWord) {
-        expectedTitle = keyWord;
+    @Then("user should be able to see {string} as page title")
+    public void userShouldBeAbleToSeeAsPageTitle(String title) {
+        expectedTitle=title;
         BrowserUtils.verifyTitle(expectedTitle);
     }
-}
+    }
 

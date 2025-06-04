@@ -4,6 +4,8 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
+
+
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty",
@@ -12,9 +14,9 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/azulCRM/step_definitions",
-        tags = "@login",
         dryRun = false,
-        publish = false
+        tags = "@Profile",
+        publish = false //generating report with public  link
 )
 public class TestRunner {}
 

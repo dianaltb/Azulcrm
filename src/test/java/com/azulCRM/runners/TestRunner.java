@@ -14,8 +14,9 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/azulCRM/step_definitions",
+        tags = "@Profile",
         dryRun = false,
-        tags = "@login",
-        publish = true //generating report with public  link
+        publish = true
 )
 public class TestRunner {}
+

@@ -11,7 +11,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class Login_step_definitions {
-    LoginPage loginPage=new LoginPage();
+    LoginPage loginPage = new LoginPage();
     private String expectedTitle;
 
     @Given("user is on the login page")
@@ -29,8 +29,8 @@ public class Login_step_definitions {
 
     @Then("user should be able to see {string} as page title")
     public void userShouldBeAbleToSeeAsPageTitle(String title) {
-        expectedTitle=title;
+        expectedTitle = title;
         BrowserUtils.verifyTitle(expectedTitle);
     }
-    }
+}
 

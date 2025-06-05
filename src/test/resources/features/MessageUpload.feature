@@ -4,7 +4,7 @@ Feature: Uploading pictures and files as messages functionality
   User Story:As a user, I should be able to upload files and pictures as messages
   Supported file formats .pdf, .txt, .jpeg, .png, .docx
 
-  Scenario Outline:  Checking the attaching of the file
+  Scenario Outline:  Verify the picture is successfully attached
     Given user logs in as "<userType>"
     When user clicks on message button in the top left corner
     And user clicks on upload files icon
@@ -21,7 +21,7 @@ Feature: Uploading pictures and files as messages functionality
       | help_desk |
       | marketing |
 
-  Scenario Outline:  Checking the attaching of the file
+  Scenario Outline:  Verify the file is successfully attached
     Given user logs in as "<userType>"
     When user clicks on message button in the top left corner
     And user clicks on upload files icon

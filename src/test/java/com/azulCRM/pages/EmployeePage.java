@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class EmployeePage {
+public class EmployeePage extends BasePage{
 
     public EmployeePage() {
 

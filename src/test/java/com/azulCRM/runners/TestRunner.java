@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/azulCRM/step_definitions",
-        tags = "@Profile",
+        tags = "@employees",
         dryRun = false,
         publish = true
 )

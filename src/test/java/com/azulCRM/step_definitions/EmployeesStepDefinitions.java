@@ -1,8 +1,6 @@
 package com.azulCRM.step_definitions;
 
-import com.azulCRM.pages.BasePage;
 import com.azulCRM.pages.EmployeePage;
-import com.azulCRM.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -12,11 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class EmployeesStepDefinitions {
-    BasePage basePage = new BasePage();
+public class EmployeesStepDefinitions{
+
     @When("the user clicks the {string} module")
     public void the_user_clicks_the_module(String employeeModule) {
-        basePage.employeeModule.click();
+        employeePage.employeesTab.click();
     }
     EmployeePage employeePage = new EmployeePage();
     @Then("the user should see the following modules on the page:")

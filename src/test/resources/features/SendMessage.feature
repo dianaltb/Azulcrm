@@ -5,7 +5,7 @@ Feature: Sending messages functionality
   by clicking on Message tab under Active Stream.
 
   Scenario Outline: 1. Send message feature works as expected
-    Given user is logged into the page as "<userType>"
+    Given user logs in as "<userType>"
     When user clicks on the message tab
     And user doesn't type any text and press send button
     Then user sees the title error message "The message title is not specified"
@@ -22,7 +22,7 @@ Feature: Sending messages functionality
 
     @SecondOutline
    Scenario Outline: 2.  The message delivery should be to 'All employees' by default.
-     Given user is logged into main page as "<userType>"
+      Given user logs in as "<userType>"
      When user clicks on the message tab
      Then user sees the All employees in the message delivery by default
 
@@ -34,7 +34,7 @@ Feature: Sending messages functionality
 
   @ThirdOutline
   Scenario Outline: 3.  User should be able to cancel sending message at any time before sending.
-    Given user is logged into main page as "<userType>"
+    Given user logs in as "<userType>"
     When user clicks on the message tab
     And user fills all the mandatory fields
     Then user is able to cancel the message before sending

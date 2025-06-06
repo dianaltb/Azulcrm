@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
-    protected BasePage(){
+    public BasePage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -92,7 +92,7 @@ public class BasePage {
     public WebElement configureMenu;
 
     //RIGHT SIDE COLUMN:
-    @FindBy(className = "bx-im-informer bx-im-border-b")
+    @FindBy(xpath = "//div[@id='bx-im-bar-notify']")
     public WebElement notificationSign;
 
     @FindBy(xpath = "//div[@id='bx-im-bar-search']")

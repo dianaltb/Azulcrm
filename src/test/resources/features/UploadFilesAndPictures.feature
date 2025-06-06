@@ -1,3 +1,4 @@
+@uploading
 Feature: File and pic uploading
 
   Agile story:
@@ -20,7 +21,6 @@ Feature: File and pic uploading
       | help_desk |
       | marketing |
 
-
   Scenario Outline: Checking the inserting of the file in text
     Given user logs in as "<userType>"
     When user clicks on "More" dropdown
@@ -37,8 +37,6 @@ Feature: File and pic uploading
       | help_desk |
       | marketing |
 
-
-  @uploading
   Scenario Outline: Checking the removing the file before sending the text
     Given user logs in as "<userType>"
     When user clicks on "More" dropdown

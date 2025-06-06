@@ -5,22 +5,24 @@ import com.azulCRM.pages.LoginPage;
 import com.azulCRM.utilities.ConfigurationReader;
 import com.azulCRM.utilities.Driver;
 import com.azulCRM.utilities.Waits;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class Send_message_step_defs {
-    private final LoginPage LOGIN = new LoginPage();
-    private final ActivityStreamPage ACTIVITY = new ActivityStreamPage();
-    private String testMessage = "Egor test";
+    ActivityStreamPage ACTIVITY;
+    String testMessage;
+
+    @Before(order = 1)
+    public void setUpPages() {
+        ACTIVITY = new ActivityStreamPage();
+        testMessage = "Egor test";
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+    }
 
     //1st Outline
-    @Given("user is logged into main page as {string}")
-    public void user_is_logged_into_main_page_as(String userType) {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        LOGIN.login(userType);
-    }
     @When("user clicks on the message tab")
     public void user_clicks_on_the_message_tab() {
         Waits.waitClickable(ACTIVITY.messageTab);

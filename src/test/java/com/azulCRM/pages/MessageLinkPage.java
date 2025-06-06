@@ -20,8 +20,8 @@ public class MessageLinkPage extends MessageUploadPage {
     @FindBy(xpath = "//span[@title='Link']")
     public WebElement addLink;
 
-    @FindBy (id = "bx-admin-prefix")
-    public WebElement iframe;
+   // @FindBy (id = "bx-admin-prefix")
+   // public WebElement iframe;
 
     @FindBy(xpath = "//input[@placeholder='Link text']")
     public WebElement textInput;

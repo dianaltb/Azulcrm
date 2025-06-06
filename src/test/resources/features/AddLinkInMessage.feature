@@ -1,7 +1,7 @@
+@addLink
 Feature: Adding link in message functionality
   Agile story: As a user, I can add link in message and after sending the message
   I can see the link text as a clickable link.
-
 
   @validLink
   Scenario Outline: Add a valid link verification

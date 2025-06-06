@@ -16,7 +16,6 @@ public class AddLinkInMessageStepDefs {
 
 
 
-
     // testing VALID URL
     @When("user clicks on activity stream button")
     public void user_clicks_on_activity_stream_button() {
@@ -45,17 +44,14 @@ public class AddLinkInMessageStepDefs {
     }
 
 
-
     @When("user clicks on Save button")
     public void user_clicks_on_save_button() {
         BrowserUtils.sleep(2);
         messageLinkPage.saveBtn.click();
-
     }
 
     @When("user clicks on send button")
     public void user_clicks_on_send_button() {
-
         messageLinkPage.sendBtn.click();
     }
 

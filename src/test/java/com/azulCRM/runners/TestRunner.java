@@ -2,9 +2,8 @@ package com.azulCRM.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import io.cucumber.messages.types.Git;
 import org.junit.runner.RunWith;
-
-
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -14,8 +13,9 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/azulCRM/step_definitions",
+        tags = "@Profile",
         dryRun = false,
-        tags = "@login",
-        publish = true //generating report with public  link
+        publish = true
 )
 public class TestRunner {}
+

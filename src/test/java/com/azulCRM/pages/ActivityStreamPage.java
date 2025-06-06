@@ -14,6 +14,7 @@ import java.util.List;
 public class ActivityStreamPage extends BasePage{
     private final WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
+    //MESSAGE TAB
     @FindBy(xpath = "(//span[contains(@id, 'message')])[2]")
     public WebElement messageTab;
 
@@ -60,4 +61,26 @@ public class ActivityStreamPage extends BasePage{
         }
         return false;
     }
+
+    //APPRECIATION TAB
+    @FindBy(id = "feed-add-post-form-link-text")
+    public WebElement moreButton;
+
+    @FindBy(xpath = "(//span[.='Appreciation'])[2]")
+    public WebElement appreciationButton;
+
+    @FindBy(id = "bx-b-uploadfile-blogPostForm")
+    public WebElement uploadFileButton;
+
+    @FindBy(xpath = "//input[@name='bxu_files[]']")
+    public WebElement uploadField;
+
+    @FindBy(xpath = "//span[contains(@id,'check-in-text-n')]") //dynamic element
+    public WebElement insertInTextButton;
+
+    @FindBy(css = ".del-but")
+    public WebElement cancelButtonX;
+
+    @FindBy(xpath = "//span[@id='feed-add-post-form-tab-message']")
+    public WebElement messageBtn;
 }

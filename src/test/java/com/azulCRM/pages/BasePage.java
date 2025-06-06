@@ -79,7 +79,7 @@ public class BasePage {
         WebElement applications = Driver.getDriver()
                 .findElement(By.xpath("//a[@title='Applications']"));
         WebElement workflows = Driver.getDriver()
-                .findElement(By.xpath("//a[@title='Applications']"));
+                .findElement(By.xpath("//a[@title='Workflows']"));
 
         if(tabName.equalsIgnoreCase("applications")){
             return applications;

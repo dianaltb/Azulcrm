@@ -10,7 +10,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class Send_message_step_defs {
-    ActivityStreamPage ACTIVITY;
+    private ActivityStreamPage ACTIVITY;
     String testMessage;
 
     @Before(order = 1)

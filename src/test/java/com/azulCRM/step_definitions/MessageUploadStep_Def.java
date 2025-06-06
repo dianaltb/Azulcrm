@@ -7,7 +7,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.When;
 
 public class MessageUploadStep_Def {
-    ActivityStreamPage ACTIVITY;
+    private ActivityStreamPage ACTIVITY;
 
     @Before(order = 1)
     public void setUpPages() {

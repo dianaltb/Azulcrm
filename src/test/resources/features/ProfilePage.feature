@@ -4,7 +4,7 @@ Feature: Profile page functionality.
   Agile story: As a user, I want to access my profile page.
 
   Scenario Outline: Profile page works as expected for all user types
-    Given user is logged into main page as "<userType>"
+    Given user logs in as "<userType>"
     When  user clicks on his email in the top right corner
     And user clicks on the My Profile from the dropdown
     Then user is able to see the following options

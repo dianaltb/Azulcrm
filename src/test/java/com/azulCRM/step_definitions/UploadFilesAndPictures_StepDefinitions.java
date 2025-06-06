@@ -1,6 +1,9 @@
 package com.azulCRM.step_definitions;
 
 import com.azulCRM.pages.ActivityStreamPage;
+import com.azulCRM.utilities.ConfigurationReader;
+import com.azulCRM.utilities.Driver;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -9,7 +12,13 @@ import org.openqa.selenium.NoSuchElementException;
 import java.nio.file.Paths;
 
 public class UploadFilesAndPictures_StepDefinitions {
-    private final ActivityStreamPage ACTIVITY = new ActivityStreamPage();
+    ActivityStreamPage ACTIVITY;
+
+    @Before(order = 1)
+    public void setUpPages() {
+        ACTIVITY = new ActivityStreamPage();
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+    }
 
     @When("user clicks on {string} dropdown")
     public void user_clicks_on_dropdown(String moreButton) {

@@ -1,33 +1,46 @@
 package com.azulCRM.pages;
 
 import com.azulCRM.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AppreciationPage {
+public class AppreciationPage{
 
     public AppreciationPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id = "feed-add-post-form-link-text")
+    @FindBy(xpath = "//span[.='More']")
     public WebElement moreButton;
 
-    @FindBy(xpath = "(//span[.='Appreciation'])[2]")
-    public WebElement appreciationButton;
 
-    @FindBy(id = "bx-b-uploadfile-blogPostForm")
-    public WebElement uploadFileButton;
+    @FindBy(xpath = "//span[.='Appreciation']")
+    public WebElement dropdownElement;
 
-    @FindBy(xpath = "//input[@name='bxu_files[]']")
-    public WebElement uploadField;
-
-    @FindBy(xpath = "//span[contains(@id,'check-in-text-n')]") //dynamic element
-    public WebElement insertInTextButton;
-
-    @FindBy(css = ".del-but")
-    public WebElement cancelButtonX;
+    @FindBy(xpath = "//div[@class='menu-popup-items']")
+    public WebElement popUpMenu;
 
 
+
+
+    @FindBy(xpath = "//body[@contenteditable='true']")
+    public WebElement textBox;
+
+    @FindBy(xpath = "//button[@id='blog-submit-button-save']")
+    public WebElement sendButton;
+
+    @FindBy(xpath = "//div[.='appreciation']")
+    public WebElement text;
+
+    @FindBy(xpath = "//a[@id='bx-grat-tag']")
+    public WebElement recipientDropdown;
+
+    @FindBy(xpath = "//div[.='helpdesk22@cydeo.com']")
+    public WebElement helpdesk22Dropdown;
+
+    @FindBy(xpath = "//div[.='appreciation']")
+    public WebElement sentMessage;
 }
+

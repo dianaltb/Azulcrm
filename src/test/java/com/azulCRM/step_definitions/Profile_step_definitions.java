@@ -18,8 +18,8 @@ public class Profile_step_definitions {
     private final LoginPage loginPage = new LoginPage();
     private final ProfilePage profilePage = new ProfilePage();
 
-    @Given("user is logged into main page as {string}")
-    public void user_is_logged_into_main_page_as(String userType) {
+    @Given("user is logged into the page as {string}")
+    public void user_is_logged_into_the_page_as(String userType) {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         loginPage.login(userType);
     }

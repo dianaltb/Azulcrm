@@ -1,19 +1,17 @@
 package com.azulCRM.step_definitions;
 
-import com.azulCRM.pages.MessagePage;
-import com.azulCRM.utilities.ConfigurationReader;
+import com.azulCRM.pages.MessageLinkPage;
+import com.azulCRM.pages.MessageUploadPage;
+import com.azulCRM.utilities.BrowserUtils;
 import com.azulCRM.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class AddLinkInMessageStepDefs {
     WebDriver driver;
-    MessagePage messagePage = new MessagePage();
+    MessageLinkPage messageLinkPage = new MessageLinkPage();
+    MessageUploadPage messageUploadPage = new MessageUploadPage();
 
 
 
@@ -22,54 +20,51 @@ public class AddLinkInMessageStepDefs {
     // testing VALID URL
     @When("user clicks on activity stream button")
     public void user_clicks_on_activity_stream_button() {
-        messagePage.activityStreamBtn.click();
+        messageLinkPage.activityStreamBtn.click();
     }
 
     @When("user clicks on massage button")
     public void user_clicks_on_massage_button() {
-        messagePage.messageBtn.click();
+        messageUploadPage.messageBtn.click();
     }
 
     @When("user clicks on link button")
     public void user_clicks_on_link_button() {
-        messagePage.addLink.click();
-    }
-
-    @Then("user sees the link window")
-    public void user_sees_the_link_window() {
-        Driver.getDriver().switchTo().frame("bx-admin-prefix");
+        messageLinkPage.addLink.click();
     }
 
 
     @When("user enters {string} in text box")
     public void user_enters_in_text_box(String linkText) {
-       messagePage.textInput.sendKeys("google");
+       messageLinkPage.textInput.sendKeys(linkText);
     }
 
     @When("user enters {string} in URL box")
     public void user_enters_in_url_box(String linkUrl) {
-        messagePage.urlInput.sendKeys(linkUrl);
+        messageLinkPage.urlInput.sendKeys(linkUrl);
     }
+
+
 
     @When("user clicks on Save button")
     public void user_clicks_on_save_button() {
-        messagePage.saveBtn.click();
+        BrowserUtils.sleep(2);
+        messageLinkPage.saveBtn.click();
 
     }
 
     @When("user clicks on send button")
     public void user_clicks_on_send_button() {
-        driver.switchTo().defaultContent();
-        messagePage.sendBtn.click();
+
+        messageLinkPage.sendBtn.click();
     }
 
     @Then("user sees the {string} as a clickable link.")
-    public void user_sees_the_as_a_clickable_link(String linkUrl) {
+    public void user_sees_the_as_a_clickable_link(String clickableText) {
 
     }
 
 
-    //testing INVALID URL
 
 
 }

@@ -9,7 +9,6 @@ Feature: Adding link in message functionality
     When user clicks on activity stream button
     And user clicks on massage button
     And user clicks on link button
-    Then user sees the link window
     When user enters "<linkText>" in text box
     And user enters "<linkUrl>" in URL box
     And user clicks on Save button

@@ -5,17 +5,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MessagePage {
+public class MessageLinkPage extends MessageUploadPage {
 
-    public MessagePage(){
+    public MessageLinkPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(xpath = "//a[@title='Activity Stream']")
     public WebElement activityStreamBtn;
 
-    @FindBy(xpath = "//span[@id='feed-add-post-form-tab-message']")
-    public WebElement messageBtn;
+   // @FindBy(xpath = "//span[@id='feed-add-post-form-tab-message']")
+  //  public WebElement messageBtn;
 
     @FindBy(xpath = "//span[@title='Link']")
     public WebElement addLink;

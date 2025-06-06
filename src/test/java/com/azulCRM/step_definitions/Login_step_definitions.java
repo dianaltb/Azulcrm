@@ -6,11 +6,9 @@ import com.azulCRM.utilities.ConfigurationReader;
 import com.azulCRM.utilities.Driver;
 import com.azulCRM.utilities.Waits;
 import io.cucumber.java.Before;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 
 public class Login_step_definitions {
     LoginPage LOGIN;

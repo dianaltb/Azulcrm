@@ -1,7 +1,6 @@
 package com.azulCRM.step_definitions;
 
 import com.azulCRM.pages.ActivityStreamPage;
-import com.azulCRM.pages.LoginPage;
 import com.azulCRM.utilities.ConfigurationReader;
 import com.azulCRM.utilities.Driver;
 import io.cucumber.java.Before;

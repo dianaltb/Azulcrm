@@ -1,14 +1,11 @@
 package com.azulCRM.step_definitions;
 
-import com.azulCRM.pages.ActivityStreamPage;
-import com.azulCRM.pages.LoginPage;
 import com.azulCRM.pages.ProfilePage;
 import com.azulCRM.utilities.BrowserUtils;
 import com.azulCRM.utilities.ConfigurationReader;
 import com.azulCRM.utilities.Driver;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;

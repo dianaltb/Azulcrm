@@ -14,7 +14,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class Profile_step_definitions {
-    ProfilePage PROFILE;
+    private ProfilePage PROFILE;
 
     @Before(order = 1)
     public void setUpPages() {

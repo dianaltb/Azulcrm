@@ -11,7 +11,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Login_step_definitions {
-    LoginPage LOGIN;
+    private LoginPage LOGIN;
 
     @Before(order = 1)
     public void setup(){

@@ -12,7 +12,7 @@ import org.openqa.selenium.NoSuchElementException;
 import java.nio.file.Paths;
 
 public class UploadFilesAndPictures_StepDefinitions {
-    ActivityStreamPage ACTIVITY;
+    private ActivityStreamPage ACTIVITY;
 
     @Before(order = 1)
     public void setUpPages() {
@@ -65,7 +65,7 @@ public class UploadFilesAndPictures_StepDefinitions {
     @Then("user confirms file is removed before sending text")
     public void user_Confirms_File_Is_Removed_Before_Sending_Text() {
         try {
-            Assert.assertFalse( ACTIVITY.insertInTextButton.isDisplayed());
+            Assert.assertFalse(ACTIVITY.insertInTextButton.isDisplayed());
         } catch (NoSuchElementException e) {
             Assert.assertTrue( true);
         }

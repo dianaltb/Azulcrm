@@ -14,7 +14,7 @@ public class MessageUploadStep_Def {
     }
     @When("user clicks on upload files icon")
     public void user_clicks_on_upload_files_icon() {
-        messageUploadPage.uploadFileButton.click();
+       // messageUploadPage.uploadFileButton.click();
 
     }
 

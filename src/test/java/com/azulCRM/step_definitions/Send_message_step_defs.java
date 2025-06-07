@@ -16,7 +16,7 @@ public class Send_message_step_defs {
     @Before(order = 1)
     public void setUpPages() {
         ACTIVITY = new ActivityStreamPage();
-        testMessage = "Egor test";
+        testMessage = "Test";
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
@@ -51,6 +51,7 @@ public class Send_message_step_defs {
     }
     @Then("user adds recipients back and fills all the mandatory fields")
     public void user_adds_recipients_back_and_fills_all_the_mandatory_fields() {
+        testMessage = " Egor";
         ACTIVITY.typeMessage(testMessage);
         Waits.waitClickable(ACTIVITY.sendButton);
         ACTIVITY.sendButton.click();

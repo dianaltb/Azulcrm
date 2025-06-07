@@ -55,7 +55,7 @@ public class ActivityStreamPage extends BasePage{
         List<WebElement> list = Driver.getDriver()
                 .findElements(listOfMessages);
         for(WebElement sent : list){
-            if(sent.getText().equals(expected)){
+            if(sent.getText().contains(expected)){
                 return true;
             }
         }

@@ -12,8 +12,9 @@ Feature: Adding link in message functionality
     When user enters "<linkText>" in text box
     And user enters "<linkUrl>" in URL box
     And user clicks on Save button
-    And user clicks on send button
     Then user sees the "<linkText>" as a clickable link.
+    When user clicks on send button
+
     Examples:
       | userType  | linkText           | linkUrl                |
       | hr        | google search page | https://www.google.com |

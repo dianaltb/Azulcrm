@@ -1,8 +1,6 @@
 package com.azulCRM.step_definitions;
 
 import com.azulCRM.pages.ActivityStreamPage;
-import com.azulCRM.utilities.ConfigurationReader;
-import com.azulCRM.utilities.Driver;
 import com.azulCRM.utilities.Waits;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
@@ -13,11 +11,10 @@ public class Send_message_step_defs {
     private ActivityStreamPage ACTIVITY;
     String testMessage;
 
-    @Before(order = 1)
+    @Before
     public void setUpPages() {
         ACTIVITY = new ActivityStreamPage();
         testMessage = "Test";
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
     //1st Outline

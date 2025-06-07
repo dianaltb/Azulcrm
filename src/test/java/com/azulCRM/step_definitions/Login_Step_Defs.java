@@ -9,7 +9,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Login_step_definitions {
+public class Login_Step_Defs {
     private LoginPage LOGIN;
 
     @Before

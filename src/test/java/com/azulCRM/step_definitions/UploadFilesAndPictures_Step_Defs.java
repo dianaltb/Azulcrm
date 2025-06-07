@@ -8,7 +8,7 @@ import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
 import java.nio.file.Paths;
 
-public class UploadFilesAndPictures_StepDefinitions {
+public class UploadFilesAndPictures_Step_Defs {
     private ActivityStreamPage ACTIVITY;
 
     @Before(order = 1)
@@ -34,7 +34,7 @@ public class UploadFilesAndPictures_StepDefinitions {
     @Then("user uploads a file {string}")
     public void user_Uploads_A_File(String fileName) {
         //dynamic path
-        String filePath = Paths.get("src", "test", "resources", "uploadFiles", fileName).toAbsolutePath().toString();
+        String filePath = Paths.get("src", "test", "resources", "upload_files", fileName).toAbsolutePath().toString();
         ACTIVITY.uploadField.sendKeys(filePath);
     }
 
@@ -55,7 +55,7 @@ public class UploadFilesAndPictures_StepDefinitions {
 
     @When("user clicks on x to remove the file")
     public void user_Clicks_On_X_To_Remove_The_File() {
-        ACTIVITY.cancelButtonX.click();
+        ACTIVITY.removeDefaultRecipients.click();
     }
 
     @Then("user confirms file is removed before sending text")

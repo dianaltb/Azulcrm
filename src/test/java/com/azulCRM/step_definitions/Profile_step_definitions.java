@@ -2,8 +2,6 @@ package com.azulCRM.step_definitions;
 
 import com.azulCRM.pages.ProfilePage;
 import com.azulCRM.utilities.BrowserUtils;
-import com.azulCRM.utilities.ConfigurationReader;
-import com.azulCRM.utilities.Driver;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -16,10 +14,9 @@ import java.util.List;
 public class Profile_step_definitions {
     private ProfilePage PROFILE;
 
-    @Before(order = 1)
+    @Before
     public void setUpPages() {
         PROFILE = new ProfilePage();
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
     @When("user clicks on his email in the top right corner")

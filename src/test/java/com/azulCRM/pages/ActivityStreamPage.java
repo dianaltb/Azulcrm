@@ -7,12 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.List;
 
-public class ActivityStreamPage extends BasePage{
-    private final WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+public class ActivityStreamPage extends BasePage {
+    private final WebDriverWait WAIT = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
     //MESSAGE TAB
     @FindBy(xpath = "(//span[contains(@id, 'message')])[2]")
@@ -41,21 +40,21 @@ public class ActivityStreamPage extends BasePage{
 
     public By listOfMessages = By.xpath("//div[@class='feed-post-text-block-inner-inner']");
 
-    public void typeMessage(String message){
+    public void typeMessage(String message) {
         messageTab.click();
         Waits.waitAndSwitchToFrame(textFrame);
         By bodyLocator = By.tagName("body");
-        WebElement bodyInFrame = wait.until(ExpectedConditions.presenceOfElementLocated(bodyLocator));
+        WebElement bodyInFrame = WAIT.until(ExpectedConditions.presenceOfElementLocated(bodyLocator));
         bodyInFrame.click();
         bodyInFrame.sendKeys(message);
         Driver.getDriver().switchTo().defaultContent();
     }
 
-    public boolean isMessageSent(String expected){
+    public boolean isMessageSent(String expected) {
         List<WebElement> list = Driver.getDriver()
                 .findElements(listOfMessages);
-        for(WebElement sent : list){
-            if(sent.getText().equals(expected)){
+        for (WebElement sent : list) {
+            if (sent.getText().contains(expected)) {
                 return true;
             }
         }

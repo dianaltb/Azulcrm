@@ -1,8 +1,6 @@
 package com.azulCRM.step_definitions;
 
 import com.azulCRM.pages.ActivityStreamPage;
-import com.azulCRM.utilities.ConfigurationReader;
-import com.azulCRM.utilities.Driver;
 import com.azulCRM.utilities.Waits;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
@@ -13,11 +11,10 @@ public class Send_message_step_defs {
     private ActivityStreamPage ACTIVITY;
     String testMessage;
 
-    @Before(order = 1)
+    @Before
     public void setUpPages() {
         ACTIVITY = new ActivityStreamPage();
-        testMessage = "Egor test";
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        testMessage = "Test";
     }
 
     //1st Outline
@@ -51,6 +48,7 @@ public class Send_message_step_defs {
     }
     @Then("user adds recipients back and fills all the mandatory fields")
     public void user_adds_recipients_back_and_fills_all_the_mandatory_fields() {
+        testMessage = " Egor";
         ACTIVITY.typeMessage(testMessage);
         Waits.waitClickable(ACTIVITY.sendButton);
         ACTIVITY.sendButton.click();

@@ -6,8 +6,7 @@ Feature: Adding link in message functionality
   @validLink
   Scenario Outline: Add a valid link verification
     Given user logs in as "<userType>"
-    When user clicks on activity stream button
-    And user clicks on massage button
+    When user clicks on massage button
     And user clicks on link button
     When user enters "<linkText>" in text box
     And user enters "<linkUrl>" in URL box

@@ -61,6 +61,31 @@ public class ActivityStreamPage extends BasePage {
         return false;
     }
 
+    // MESSAGE-ADD LINK
+  //  @FindBy(xpath = "//span[@id='feed-add-post-form-tab-message']")
+   // public WebElement messageBtn;
+
+    @FindBy(xpath = "//span[@title='Link']")
+    public WebElement addLink;
+
+
+    @FindBy(xpath = "//input[@placeholder='Link text']")
+    public WebElement textInput;
+
+    @FindBy(xpath = "//input[@placeholder='Link URL']")
+    public WebElement urlInput;
+
+    @FindBy(id = "blog-submit-button-save")
+    public WebElement sendBtn;
+
+    @FindBy(xpath = "//input[@value='Save']")
+    public WebElement saveBtn;
+
+    @FindBy(id = "feed-post-contentview-BLOG_POST-217")
+    public WebElement sentLink;
+
+
+
     //APPRECIATION TAB
     @FindBy(id = "feed-add-post-form-link-text")
     public WebElement moreButton;

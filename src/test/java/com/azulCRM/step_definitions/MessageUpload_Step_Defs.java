@@ -4,7 +4,7 @@ import com.azulCRM.pages.ActivityStreamPage;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.When;
 
-public class MessageUploadStep_Def {
+public class MessageUpload_Step_Defs {
     private ActivityStreamPage ACTIVITY;
 
     @Before
@@ -14,7 +14,7 @@ public class MessageUploadStep_Def {
 
     @When("user clicks on message button in the top left corner")
     public void user_clicks_on_message_button_in_the_top_left_corner() {
-        ACTIVITY.messageBtn.click();
+        ACTIVITY.messageTab.click();
     }
 
     @When("user clicks on upload files icon")

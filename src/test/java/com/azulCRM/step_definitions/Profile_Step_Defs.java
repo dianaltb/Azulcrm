@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class Profile_step_definitions {
+public class Profile_Step_Defs {
     private ProfilePage PROFILE;
 
     @Before

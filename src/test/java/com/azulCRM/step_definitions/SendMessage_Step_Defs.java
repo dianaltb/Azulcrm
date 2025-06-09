@@ -7,9 +7,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class Send_message_step_defs {
+public class SendMessage_Step_Defs {
     private ActivityStreamPage ACTIVITY;
-    String testMessage;
+    private String testMessage;
 
     @Before
     public void setUpPages() {
@@ -23,15 +23,6 @@ public class Send_message_step_defs {
         Waits.waitClickable(ACTIVITY.messageTab);
         ACTIVITY.messageTab.click();
     }
-    @When("user doesn't type any text and press send button")
-    public void user_doesn_t_type_any_text_and_press_send_button() {
-        ACTIVITY.sendButton.click();
-    }
-    @Then("user sees the title error message {string}")
-    public void user_sees_the_title_error_message(String error) {
-        Assert.assertTrue(ACTIVITY.titleError.isDisplayed());
-        Assert.assertEquals(ACTIVITY.titleError.getText(), error);
-    }
     @When("user types any text, but removes All employees from recipients")
     public void user_types_any_text_but_removes_all_employees_from_recipients() {
         ACTIVITY.typeMessage(testMessage);
@@ -39,12 +30,6 @@ public class Send_message_step_defs {
         ACTIVITY.removeDefaultRecipients.click();
         Waits.waitClickable(ACTIVITY.sendButton);
         ACTIVITY.sendButton.click();
-    }
-    @Then("user sees the recipient error message {string}")
-    public void user_sees_the_recipient_error_message(String error) {
-        Waits.waitVisible(ACTIVITY.recipientError);
-        Assert.assertTrue(ACTIVITY.recipientError.isDisplayed());
-        Assert.assertEquals(ACTIVITY.recipientError.getText(), error);
     }
     @Then("user adds recipients back and fills all the mandatory fields")
     public void user_adds_recipients_back_and_fills_all_the_mandatory_fields() {

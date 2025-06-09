@@ -11,7 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmployeesStepDefinitions {
+public class Employees_Step_Defs {
     private EmployeePage EMPLOYEE;
     private Actions actions;
 

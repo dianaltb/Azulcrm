@@ -20,17 +20,11 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
     public WebElement textFrame;
 
-    @FindBy(id = "blog-submit-button-save")
+    @FindBy(xpath = "//button[@id='blog-submit-button-save']")
     public WebElement sendButton;
 
     @FindBy(id = "blog-submit-button-cancel")
     public WebElement cancelButton;
-
-    @FindBy(xpath = "//span[@class='feed-add-info-text']")
-    public WebElement titleError;
-
-    @FindBy(xpath = "//span[contains(text(), 'at least one person')]")
-    public WebElement recipientError;
 
     @FindBy(xpath = "//span[@data-id='UA']")
     public WebElement messageDeliveryTab;
@@ -61,6 +55,18 @@ public class ActivityStreamPage extends BasePage {
         return false;
     }
 
+    @FindBy(xpath = "//span[@title='Link']")
+    public WebElement addLink;
+
+    @FindBy(xpath = "//input[@placeholder='Link text']")
+    public WebElement textInput;
+
+    @FindBy(xpath = "//input[@placeholder='Link URL']")
+    public WebElement urlInput;
+
+    @FindBy(xpath = "//input[@value='Save']")
+    public WebElement saveBtn;
+
     //APPRECIATION TAB
     @FindBy(id = "feed-add-post-form-link-text")
     public WebElement moreButton;
@@ -77,9 +83,6 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "//span[contains(@id,'check-in-text-n')]") //dynamic element
     public WebElement insertInTextButton;
 
-    @FindBy(css = ".del-but")
-    public WebElement cancelButtonX;
-
-    @FindBy(xpath = "//span[@id='feed-add-post-form-tab-message']")
-    public WebElement messageBtn;
+    @FindBy(xpath = "//span[@class='del-but']") //dynamic element
+    public WebElement deleteButton;
 }

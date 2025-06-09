@@ -20,7 +20,7 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
     public WebElement textFrame;
 
-    @FindBy(id = "blog-submit-button-save")
+    @FindBy(xpath = "//button[@id='blog-submit-button-save']")
     public WebElement sendButton;
 
     @FindBy(id = "blog-submit-button-cancel")

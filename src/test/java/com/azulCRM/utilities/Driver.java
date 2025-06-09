@@ -31,8 +31,7 @@ public class Driver {
                 default:
                     throw new RuntimeException("Unsupported browser: " + browser);
             }
-            POOL.get().manage().window().setPosition(new Point(4, 4));
-            POOL.get().manage().window().setSize(new Dimension(1400, 720));
+            POOL.get().manage().window().maximize();
             POOL.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
         return POOL.get();

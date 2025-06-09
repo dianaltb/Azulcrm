@@ -13,20 +13,15 @@ public class Waits {
         return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
     }
 
-    //Explicit and Hard waits:
-    public static void sleep(int sec){
-        try{
-            Thread.sleep(sec * 1000);
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
     public static void waitTitle(String partialTitle){
         getWait().until(ExpectedConditions.titleContains(partialTitle));
     }
 
     public static void waitVisible(WebElement target){
         getWait().until(ExpectedConditions.visibilityOf(target));
+    }
+    public static WebElement waitVisibilityOfElement(By by){
+        return getWait().until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
     public static void waitClickable(WebElement target){

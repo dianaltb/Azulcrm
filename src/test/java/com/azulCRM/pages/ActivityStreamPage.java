@@ -26,9 +26,6 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(id = "blog-submit-button-cancel")
     public WebElement cancelButton;
 
-    @FindBy(xpath = "//span[@class='feed-add-info-text']")
-    public WebElement errorMessage;
-
     @FindBy(xpath = "//span[@data-id='UA']")
     public WebElement messageDeliveryTab;
 
@@ -58,13 +55,8 @@ public class ActivityStreamPage extends BasePage {
         return false;
     }
 
-    // MESSAGE-ADD LINK
-  //  @FindBy(xpath = "//span[@id='feed-add-post-form-tab-message']")
-   // public WebElement messageBtn;
-
     @FindBy(xpath = "//span[@title='Link']")
     public WebElement addLink;
-
 
     @FindBy(xpath = "//input[@placeholder='Link text']")
     public WebElement textInput;
@@ -72,16 +64,8 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "//input[@placeholder='Link URL']")
     public WebElement urlInput;
 
-    @FindBy(id = "blog-submit-button-save")
-    public WebElement sendBtn;
-
     @FindBy(xpath = "//input[@value='Save']")
     public WebElement saveBtn;
-
-    @FindBy(id = "feed-post-contentview-BLOG_POST-217")
-    public WebElement sentLink;
-
-
 
     //APPRECIATION TAB
     @FindBy(id = "feed-add-post-form-link-text")
@@ -99,13 +83,6 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "//span[contains(@id,'check-in-text-n')]") //dynamic element
     public WebElement insertInTextButton;
 
-    @FindBy(xpath = "//body[@contenteditable='true']")
-    public WebElement textBox;
-
-    @FindBy(xpath = "//a[@id='bx-grat-tag']")
-    public WebElement recipientDropdown;
-
-    @FindBy(xpath = "//div[.='helpdesk22@cydeo.com']")
-    public WebElement helpdesk22Dropdown;
-
+    @FindBy(xpath = "//span[@class='del-but']") //dynamic element
+    public WebElement deleteButton;
 }

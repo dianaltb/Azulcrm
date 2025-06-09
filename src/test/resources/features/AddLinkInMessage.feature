@@ -6,13 +6,14 @@ Feature: Adding link in message functionality
   @validLink
   Scenario Outline: Add a valid link verification
     Given user logs in as "<userType>"
-    When user clicks on massage button
+    When user clicks on the message tab
     And user clicks on link button
     When user enters "<linkText>" in text box
     And user enters "<linkUrl>" in URL box
     And user clicks on Save button
     Then user sees the "<linkText>" as a clickable link.
-    When user clicks on send button
+    When user clicks the send button
+
 
     Examples:
       | userType  | linkText           | linkUrl                |

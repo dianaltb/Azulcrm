@@ -73,4 +73,14 @@ public class ActivityStreamPage extends BasePage {
 
     @FindBy(xpath = "//span[contains(@id,'check-in-text-n')]") //dynamic element
     public WebElement insertInTextButton;
+
+    @FindBy(xpath = "//body[@contenteditable='true']")
+    public WebElement textBox;
+
+    @FindBy(xpath = "//a[@id='bx-grat-tag']")
+    public WebElement recipientDropdown;
+
+    @FindBy(xpath = "//div[.='helpdesk22@cydeo.com']")
+    public WebElement helpdesk22Dropdown;
+
 }

@@ -24,6 +24,10 @@ public class Waits {
         return getWait().until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
+    public static void waitElementLocated(By by){
+        getWait().until(ExpectedConditions.visibilityOfElementLocated(by));
+    }
+
     public static void waitClickable(WebElement target){
         getWait().until(ExpectedConditions.elementToBeClickable(target));
     }
@@ -32,7 +36,7 @@ public class Waits {
         getWait().until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame));
     }
 
-    public static void waitElementLocated(By by){
-        getWait().until(ExpectedConditions.visibilityOfElementLocated(by));
+    public static void waitInvisible(WebElement target){
+        getWait().until(ExpectedConditions.invisibilityOf(target));
     }
 }

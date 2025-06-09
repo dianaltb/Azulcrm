@@ -15,5 +15,5 @@ Feature: Appreciation sending functionality
     Examples:
       | userType  |
       | hr        |
-      #| help_desk |
-      #| marketing |
+      | help_desk |
+      | marketing |

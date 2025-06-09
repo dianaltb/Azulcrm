@@ -24,7 +24,7 @@ public class AddLinkInMessageStepDefs {
 
     @When("user clicks on massage button")
     public void user_clicks_on_massage_button() {
-        ACTIVITY.messageBtn.click();
+        ACTIVITY.messageTab.click();
     }
 
     @When("user clicks on link button")

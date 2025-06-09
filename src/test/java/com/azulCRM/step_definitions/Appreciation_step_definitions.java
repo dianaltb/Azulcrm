@@ -48,7 +48,6 @@ ActivityStreamPage activityStreamPage = new ActivityStreamPage();
     @Then("verifies if message is displayed")
     public void verifiesIfMessageIsDisplayed() {
 
-
 WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 WebElement sentMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[.='appreciation']")));
 Assert.assertTrue(sentMessage.isDisplayed());

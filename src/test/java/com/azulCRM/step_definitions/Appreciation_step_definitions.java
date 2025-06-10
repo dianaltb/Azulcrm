@@ -68,7 +68,7 @@ Assert.assertTrue(sentMessage.isDisplayed());
     @And("user sends the emptyMessage")
     public void userSendsTheEmptyMessage() {
         activityStreamPage.sendButton.click();
-        BrowserUtils.sleep(3);
+
     }
 
     @Then("verifies if error message is displayed")
@@ -83,6 +83,6 @@ Assert.assertTrue(sentMessage.isDisplayed());
     @And("user cancels sending the appreciation message")
     public void userCancelsSendingTheAppreciationMessage() {
         activityStreamPage.cancelButton.click();
-        BrowserUtils.sleep(3);
+
     }
 }

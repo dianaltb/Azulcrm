@@ -6,6 +6,8 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class SendMessage_Step_Defs {
     private ActivityStreamPage ACTIVITY;
@@ -23,6 +25,7 @@ public class SendMessage_Step_Defs {
         Waits.waitClickable(ACTIVITY.messageTab);
         ACTIVITY.messageTab.click();
     }
+
     @When("user types any text, but removes All employees from recipients")
     public void user_types_any_text_but_removes_all_employees_from_recipients() {
         ACTIVITY.typeMessage(testMessage);
@@ -31,6 +34,23 @@ public class SendMessage_Step_Defs {
         Waits.waitClickable(ACTIVITY.sendButton);
         ACTIVITY.sendButton.click();
     }
+
+    @When("user clicks the send button")
+    public void user_clicks_the_send_button() {
+        By locator = By.xpath("//button[@id='blog-submit-button-save']");
+        WebElement sendButton = Waits.waitVisibilityOfElement(locator);
+        Waits.waitClickable(sendButton);
+        sendButton.click();
+    }
+
+    @Then("user sees the error message {string}")
+    public void user_sees_the_error_message(String error) {
+        By locator = By.xpath("//span[@class='feed-add-info-text']");
+        WebElement errorMessage = Waits.waitVisibilityOfElement(locator);
+        Assert.assertTrue(errorMessage.isDisplayed());
+        Assert.assertEquals(errorMessage.getText(), error);
+    }
+
     @Then("user adds recipients back and fills all the mandatory fields")
     public void user_adds_recipients_back_and_fills_all_the_mandatory_fields() {
         testMessage = " Egor";
@@ -38,6 +58,7 @@ public class SendMessage_Step_Defs {
         Waits.waitClickable(ACTIVITY.sendButton);
         ACTIVITY.sendButton.click();
     }
+
     @Then("user is able to send a message")
     public void user_is_able_to_send_a_message() {
         Waits.waitElementLocated(ACTIVITY.listOfMessages);
@@ -57,6 +78,7 @@ public class SendMessage_Step_Defs {
         testMessage = "Another message";
         ACTIVITY.typeMessage(testMessage);
     }
+
     @Then("user is able to cancel the message before sending")
     public void user_is_able_to_cancel_the_message_before_sending() {
         Waits.waitClickable(ACTIVITY.cancelButton);

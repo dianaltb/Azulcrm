@@ -64,7 +64,7 @@ public class CreatePollStepDef {
     @Then("user clicks on “Allow multiple choice” checkbox")
     public void user_clicks_on_allow_multiple_choice_checkbox() {
         ACTIVITY.multipleChoiceBox.click();
-        Assert.assertTrue(ACTIVITY.answerField.isSelected());
+        Assert.assertTrue(ACTIVITY.multipleChoiceBox.isSelected());
 
     }
 

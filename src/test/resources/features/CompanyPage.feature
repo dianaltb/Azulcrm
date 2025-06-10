@@ -9,13 +9,14 @@ Feature: Company Page Modules visibility
     Then the following modules should be visible on the page:
 
       |Official Information |
-      |Our Life |
-      |About Company |
-      |Photo Company |
-      |Video |
-      |Career |
-      |Business News(RSS) |
-      |More |
+      |Our Life             |
+      |About Company        |
+      |Photo Gallery        |
+      |Video                |
+      |More                 |
+      |Career               |
+      |Business News (RSS)  |
+
 
     Examples: for all 3 user types
       | userType  |

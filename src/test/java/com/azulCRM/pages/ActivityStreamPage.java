@@ -82,4 +82,5 @@ public class ActivityStreamPage extends BasePage {
 
     @FindBy(xpath = "//span[@id='feed-add-post-form-tab-message']")
     public WebElement messageBtn;
+
 }

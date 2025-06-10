@@ -10,10 +10,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
 
 public class CreatePollStepDef {
     public ActivityStreamPage ACTIVITY;
@@ -22,19 +24,21 @@ public class CreatePollStepDef {
     @Before
     public void setUpPages() {
         ACTIVITY = new ActivityStreamPage();
-        testMessage = "Test";
+        testMessage = "Diana Test";
     }
 
     @Given("user clicks on the Poll tab")
     public void userClicksOnThePollTab() {
+        Waits.waitClickable(ACTIVITY.messageTab);
         ACTIVITY.pollTab.click();
     }
 
 
     @When("user enters text as the message title")
     public void user_enters_text_as_the_message_title() {
-        ACTIVITY.typeMessage(testMessage);
+       ACTIVITY.typeMessage(testMessage);
     }
+
 
 
     @When("user types question text in Question field")
@@ -51,7 +55,9 @@ public class CreatePollStepDef {
 
     @Then("user should be able to create poll")
     public void user_should_be_able_to_create_poll() {
-        ACTIVITY.isMessageSent(testMessage);
+        Waits.waitElementLocated(ACTIVITY.listOfMessages);
+        Assert.assertTrue(ACTIVITY.isMessageSent(testMessage));
+
     }
 
 
@@ -60,12 +66,6 @@ public class CreatePollStepDef {
         ACTIVITY.multipleChoiceBox.click();
         Assert.assertTrue(ACTIVITY.answerField.isSelected());
 
-    }
-
-
-    @Then("user clicks Send button")
-    public void userClicksSendButton() {
-        ACTIVITY.sendButton.click();
     }
 
 

@@ -18,8 +18,8 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "(//span[contains(@id, 'message')])[2]")
     public WebElement messageTab;
 
-    @FindBy(xpath = "//span[@id='feed-add-post-form-tab-vote']")
-    public WebElement pollsTab;
+    //  @FindBy(xpath = "//span[@id='feed-add-post-form-tab-vote']")
+    // public WebElement pollsTab;
 
     @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
     public WebElement textFrame;

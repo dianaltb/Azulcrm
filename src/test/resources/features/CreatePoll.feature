@@ -33,6 +33,7 @@ Feature:AzulCRM Create Poll functionality
     Then user clicks on “Allow multiple choice” checkbox
     Examples:
       | userType  |
+      | hr        |
       | help_desk |
       | marketing |
 

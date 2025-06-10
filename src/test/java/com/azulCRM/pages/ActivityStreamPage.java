@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -67,6 +68,7 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "//input[@value='Save']")
     public WebElement saveBtn;
 
+
     //APPRECIATION TAB
     @FindBy(id = "feed-add-post-form-link-text")
     public WebElement moreButton;
@@ -85,4 +87,19 @@ public class ActivityStreamPage extends BasePage {
 
     @FindBy(xpath = "//span[@class='del-but']") //dynamic element
     public WebElement deleteButton;
+
+
+    //CREATE POLL TAB
+
+    @FindBy(xpath = "//span[@id='feed-add-post-form-tab-vote']")
+    public WebElement pollTab;
+
+    @FindBy(xpath = "//input[@id='question_0']")
+    public WebElement questionField;
+
+    @FindBy(xpath = "//input[@id='answer_0__0_']")
+    public WebElement answerField;
+
+    @FindBy(xpath = "//input[@id='multi_0']")
+    public WebElement multipleChoiceBox;
 }

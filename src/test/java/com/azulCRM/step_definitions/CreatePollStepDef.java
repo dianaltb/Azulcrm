@@ -33,9 +33,7 @@ public class CreatePollStepDef {
 
     @When("user enters text as the message title")
     public void user_enters_text_as_the_message_title() {
-       Driver.getDriver().switchTo().frame(ACTIVITY.textFrame);
-        ACTIVITY.textFrame.sendKeys(testMessage);
-        Driver.getDriver().switchTo().defaultContent();
+        ACTIVITY.typeMessage(testMessage);
     }
 
 
@@ -44,14 +42,16 @@ public class CreatePollStepDef {
         ACTIVITY.questionField.sendKeys(testMessage);
 
     }
+
     @When("user adds answer text in Answer field")
     public void user_adds_answer_text_in_answer_field() {
         ACTIVITY.answerField.sendKeys(testMessage);
 
     }
+
     @Then("user should be able to create poll")
     public void user_should_be_able_to_create_poll() {
-
+        ACTIVITY.isMessageSent(testMessage);
     }
 
 
@@ -67,8 +67,6 @@ public class CreatePollStepDef {
     public void userClicksSendButton() {
         ACTIVITY.sendButton.click();
     }
-
-
 
 
 }

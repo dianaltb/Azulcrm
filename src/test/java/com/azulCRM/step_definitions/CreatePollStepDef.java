@@ -26,11 +26,10 @@ public class CreatePollStepDef {
     }
 
     @Given("user clicks on the Poll tab")
-    public void user_clicks_on_the_poll_tab() {
-        Waits.waitClickable(ACTIVITY.pollTab);
+    public void userClicksOnThePollTab() {
         ACTIVITY.pollTab.click();
-
     }
+
 
     @When("user enters text as the message title")
     public void user_enters_text_as_the_message_title() {
@@ -68,4 +67,8 @@ public class CreatePollStepDef {
     public void userClicksSendButton() {
         ACTIVITY.sendButton.click();
     }
+
+
+
+
 }

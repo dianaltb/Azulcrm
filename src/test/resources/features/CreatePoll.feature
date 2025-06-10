@@ -19,7 +19,7 @@ Feature:AzulCRM Create Poll functionality
     When user enters text as the message title
     And user types question text in Question field
     And user adds answer text in Answer field
-    And user clicks Send button
+    And user clicks the send button
     Then user should be able to create poll
     Examples:
       | userType  |
@@ -29,7 +29,7 @@ Feature:AzulCRM Create Poll functionality
 
   Scenario Outline: Validation "Allow multiple" choice checkbox
     When user logs in as "<userType>"
-    Given user clicks on the "Poll" button
+    Given user clicks on the Poll tab
     Then user clicks on “Allow multiple choice” checkbox
     Examples:
       | userType  |
@@ -39,24 +39,19 @@ Feature:AzulCRM Create Poll functionality
   Scenario Outline: Mandatory fields verification under Poll tab
   Mandatory fields: Message title, recipient, 1 question, 1 answer.
     When user logs in as "<userType>"
-    Given user clicks on the "Poll" button
-    Then user clicks "Send" button
-    Then user sees the title error message "The message title is not specified"
+    Given user clicks on the Poll tab
+    And user clicks the send button
+    Then user sees the error message "The message title is not specified"
     When user types any text, but removes All employees from recipients
-    Then user clicks "Send" button
-     #Then user sees the recipient error message "Please specify at least one person."
-    Then user sees the recipient error message:
-      | expected text                      |
-      | The message title is not specified |
-
-
-    Then user clicks "Send" button
-    Then user sees the recipient error message "The question text is not specified."
+    And user clicks the send button
+    Then user sees the error message "Please specify at least one person."
+    And user clicks the send button
+    Then user sees the error message "The question text is not specified."
     And user types question text in Question field
-    Then user clicks "Send" button
-    Then user sees the recipient error message "The question ......... has no answers."
+    And user clicks the send button
+    Then user sees the error message "The question ......... has no answers."
     And user adds answer text in Answer field
-    And user clicks "Send" button
+    And user clicks the send button
     Then user should be able to create poll
 
     Examples:

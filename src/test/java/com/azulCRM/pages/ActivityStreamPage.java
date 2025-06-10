@@ -18,6 +18,9 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "(//span[contains(@id, 'message')])[2]")
     public WebElement messageTab;
 
+    @FindBy(xpath = "//span[@id='feed-add-post-form-tab-vote']")
+    public WebElement pollsTab;
+
     @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
     public WebElement textFrame;
 
@@ -36,7 +39,6 @@ public class ActivityStreamPage extends BasePage {
     public By listOfMessages = By.xpath("//div[@class='feed-post-text-block-inner-inner']");
 
     public void typeMessage(String message) {
-        messageTab.click();
         Waits.waitAndSwitchToFrame(textFrame);
         By bodyLocator = By.tagName("body");
         WebElement bodyInFrame = WAIT.until(ExpectedConditions.presenceOfElementLocated(bodyLocator));

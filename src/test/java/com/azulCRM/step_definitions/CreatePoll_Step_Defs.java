@@ -12,7 +12,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class CreatePollStepDef {
+public class CreatePoll_Step_Defs {
     public ActivityStreamPage ACTIVITY;
     String testMessage;
 

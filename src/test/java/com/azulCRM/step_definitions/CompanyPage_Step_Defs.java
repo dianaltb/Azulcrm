@@ -12,7 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompanyPage_StepDefinitions {
+public class CompanyPage_Step_Defs {
     private CompanyPage COMPANY;
     private Actions actions;
 

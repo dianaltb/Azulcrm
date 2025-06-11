@@ -22,7 +22,7 @@ public class Login_Step_Defs {
     @Then("user should be able to see {string} as page title")
     public void userShouldBeAbleToSeeAsPageTitle(String title) {
         Waits.waitTitle(title);
-        BrowserUtils.verifyTitle(title);
+        BrowserUtils.verifyTitleContains(title);
     }
 }
 

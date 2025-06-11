@@ -45,6 +45,7 @@ Feature:AzulCRM Create Poll functionality
     And user clicks the send button
     Then user sees the error message "The message title is not specified"
     When user types any text, but removes All employees from recipients
+    And user clicks the send button
     Then user sees the error message "Please specify at least one person."
     When user adds answer text in Answer field
     And user clicks the send button
@@ -52,8 +53,7 @@ Feature:AzulCRM Create Poll functionality
     When user removes answer from answer field
     And user types question text in Question field
     And user clicks the send button
-    Then user sees the error message The question "<questionText>" has no answers.
-
+    Then user sees the error message The question has no answers.
 
     Examples:
       | userType  |

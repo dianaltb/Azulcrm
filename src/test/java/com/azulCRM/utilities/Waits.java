@@ -1,7 +1,6 @@
 package com.azulCRM.utilities;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -37,10 +36,4 @@ public class Waits {
     public static void waitAndSwitchToFrame(WebElement frame){
         getWait().until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame));
     }
-
-    public static void waitInvisible(WebElement target){
-        getWait().until(ExpectedConditions.invisibilityOf(target));
-    }
-
-
 }

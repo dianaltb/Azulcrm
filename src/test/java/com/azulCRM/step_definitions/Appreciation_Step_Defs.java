@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class Appreciation_step_definitions extends ActivityStreamPage {
+public class Appreciation_Step_Defs extends ActivityStreamPage {
     private final ActivityStreamPage ACTIVE = new ActivityStreamPage();
 
     @Given("user navigates to appreciation")

@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -16,6 +17,9 @@ public class ActivityStreamPage extends BasePage {
     //MESSAGE TAB
     @FindBy(xpath = "(//span[contains(@id, 'message')])[2]")
     public WebElement messageTab;
+
+    //  @FindBy(xpath = "//span[@id='feed-add-post-form-tab-vote']")
+    // public WebElement pollsTab;
 
     @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
     public WebElement textFrame;
@@ -35,7 +39,6 @@ public class ActivityStreamPage extends BasePage {
     public By listOfMessages = By.xpath("//div[@class='feed-post-text-block-inner-inner']");
 
     public void typeMessage(String message) {
-        messageTab.click();
         Waits.waitAndSwitchToFrame(textFrame);
         By bodyLocator = By.tagName("body");
         WebElement bodyInFrame = WAIT.until(ExpectedConditions.presenceOfElementLocated(bodyLocator));
@@ -67,6 +70,7 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "//input[@value='Save']")
     public WebElement saveBtn;
 
+
     //APPRECIATION TAB
     @FindBy(id = "feed-add-post-form-link-text")
     public WebElement moreButton;
@@ -85,6 +89,27 @@ public class ActivityStreamPage extends BasePage {
 
     @FindBy(xpath = "//span[@class='del-but']") //dynamic element
     public WebElement deleteButton;
+
+    @FindBy(xpath = "//a[@id='bx-grat-tag']")
+    public WebElement recipientDropdown;
+
+    @FindBy(xpath = "//div[.='helpdesk22@cydeo.com']")
+    public WebElement helpdesk22Dropdown;
+
+
+    //CREATE POLL TAB
+
+    @FindBy(xpath = "//span[@id='feed-add-post-form-tab-vote']")
+    public WebElement pollTab;
+
+    @FindBy(xpath = "//input[@id='question_0']")
+    public WebElement questionField;
+
+    @FindBy(xpath = "//input[@id='answer_0__0_']")
+    public WebElement answerField;
+
+    @FindBy(xpath = "//input[@id='multi_0']")
+    public WebElement multipleChoiceBox;
 
     // Top-level Activity Stream options: MESSAGE, TASK, EVENT, POLL, MORE
     @FindBy(xpath = "//div[@id='feed-add-post-form-tab']/span[contains(@class, 'feed-add-post-form-link')]")

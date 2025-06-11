@@ -11,4 +11,7 @@ public class EmployeePage extends BasePage{
 
     @FindBy(xpath = "//div[contains(@class,'main-buttons-item-active')]//span[@class='main-buttons-item-text-title']")
     public WebElement selectedTab;
+
+
+
 }

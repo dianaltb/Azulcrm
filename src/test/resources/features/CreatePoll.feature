@@ -52,12 +52,11 @@ Feature:AzulCRM Create Poll functionality
     When user removes answer from answer field
     And user types question text in Question field
     And user clicks the send button
-    Then user sees the error message "The question ......... has no answers."
+    Then user sees the error message The question "<questionText>" has no answers.
+
 
     Examples:
       | userType  |
       | hr        |
       | help_desk |
       | marketing |
-
-

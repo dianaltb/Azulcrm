@@ -1,6 +1,7 @@
 package com.azulCRM.step_definitions;
 
 import com.azulCRM.pages.ActivityStreamPage;
+import com.azulCRM.utilities.Driver;
 import com.azulCRM.utilities.Waits;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
@@ -8,6 +9,8 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import java.time.Duration;
 
 public class SendMessage_Step_Defs {
     private ActivityStreamPage ACTIVITY;
@@ -31,8 +34,6 @@ public class SendMessage_Step_Defs {
         ACTIVITY.typeMessage(testMessage);
         Waits.waitClickable(ACTIVITY.removeDefaultRecipients);
         ACTIVITY.removeDefaultRecipients.click();
-        Waits.waitClickable(ACTIVITY.sendButton);
-        ACTIVITY.sendButton.click();
     }
 
     @When("user clicks the send button")
@@ -44,19 +45,19 @@ public class SendMessage_Step_Defs {
     }
 
     @Then("user sees the error message {string}")
-    public void user_sees_the_error_message(String error) {
-        By locator = By.xpath("//span[@class='feed-add-info-text']");
-        WebElement errorMessage = Waits.waitVisibilityOfElement(locator);
-        Assert.assertTrue(errorMessage.isDisplayed());
-        Assert.assertEquals(errorMessage.getText(), error);
+    public void user_sees_the_error_message(String error) throws InterruptedException {
+        Thread.sleep(500);
+        Waits.waitVisible(ACTIVITY.errorMessage);
+        System.out.println("errorMessage = " + ACTIVITY.errorMessage.getText());
+        System.out.println("error = " + error);
+        Assert.assertTrue(ACTIVITY.errorMessage.isDisplayed());
+        Assert.assertEquals(ACTIVITY.errorMessage.getText(), error);
     }
 
-    @Then("user adds recipients back and fills all the mandatory fields")
-    public void user_adds_recipients_back_and_fills_all_the_mandatory_fields() {
+    @Then("user types the message")
+    public void user_types_the_message() {
         testMessage = " Egor";
         ACTIVITY.typeMessage(testMessage);
-        Waits.waitClickable(ACTIVITY.sendButton);
-        ACTIVITY.sendButton.click();
     }
 
     @Then("user is able to send a message")

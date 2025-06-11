@@ -18,9 +18,6 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "(//span[contains(@id, 'message')])[2]")
     public WebElement messageTab;
 
-    //  @FindBy(xpath = "//span[@id='feed-add-post-form-tab-vote']")
-    // public WebElement pollsTab;
-
     @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
     public WebElement textFrame;
 
@@ -98,7 +95,6 @@ public class ActivityStreamPage extends BasePage {
 
 
     //CREATE POLL TAB
-
     @FindBy(xpath = "//span[@id='feed-add-post-form-tab-vote']")
     public WebElement pollTab;
 
@@ -111,6 +107,7 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "//input[@id='multi_0']")
     public WebElement multipleChoiceBox;
 
+
     // Top-level Activity Stream options: MESSAGE, TASK, EVENT, POLL, MORE
     @FindBy(xpath = "//div[@id='feed-add-post-form-tab']/span[contains(@class, 'feed-add-post-form-link')]")
     public List<WebElement> topMenuOptions;
@@ -121,5 +118,9 @@ public class ActivityStreamPage extends BasePage {
 
     @FindBy(xpath = "//div[contains(@class, 'menu-popup-items')]/span[@class='menu-popup-item-text']")
     public List<WebElement> moreDropdownOptions;
+
+    @FindBy(xpath = " //span[@class='feed-add-info-text']")
+    public WebElement errorMessage;
+
 
 }

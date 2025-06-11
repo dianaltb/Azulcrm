@@ -110,7 +110,4 @@ public class ActivityStreamPage extends BasePage {
 
     @FindBy(xpath = "//input[@id='multi_0']")
     public WebElement multipleChoiceBox;
-
-
-
 }

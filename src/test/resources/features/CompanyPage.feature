@@ -13,9 +13,10 @@ Feature: Company Page Modules visibility
       |About Company        |
       |Photo Gallery        |
       |Video                |
-      |More                 |
       |Career               |
       |Business News (RSS)  |
+      |More                 |
+
 
 
     Examples: for all 3 user types

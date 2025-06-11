@@ -36,9 +36,8 @@ public class CreatePollStepDef {
 
     @When("user enters text as the message title")
     public void user_enters_text_as_the_message_title() {
-       ACTIVITY.typeMessage(testMessage);
+        ACTIVITY.typeMessage(testMessage);
     }
-
 
 
     @When("user types question text in Question field")
@@ -69,4 +68,8 @@ public class CreatePollStepDef {
     }
 
 
+    @And("user removes answer from answer field")
+    public void userRemovesAnswerFromAnswerField() {
+        ACTIVITY.answerField.clear();
+    }
 }

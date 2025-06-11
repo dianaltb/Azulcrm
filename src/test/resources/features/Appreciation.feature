@@ -11,13 +11,11 @@ Feature: Appreciation sending functionality
     And user sends the appreciation message
     Then verifies if message is displayed
 
-
     Examples:
       | userType  |
       | hr        |
       | help_desk |
       | marketing |
-
 
   Scenario Outline: Appreciation empty message sending verification
     Given user logs in as "<userType>"
@@ -38,7 +36,6 @@ Feature: Appreciation sending functionality
     And user navigates to appreciation
     And user types in an "appreciation" message
     And user cancels sending the appreciation message
-
 
     Examples:
       | userType  |

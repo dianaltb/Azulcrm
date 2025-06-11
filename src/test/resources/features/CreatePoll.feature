@@ -37,6 +37,7 @@ Feature:AzulCRM Create Poll functionality
       | help_desk |
       | marketing |
 
+  @PollErrors
   Scenario Outline: Mandatory fields verification under Poll tab
   Mandatory fields: Message title, recipient, 1 question, 1 answer.
     When user logs in as "<userType>"
@@ -45,16 +46,13 @@ Feature:AzulCRM Create Poll functionality
     Then user sees the error message "The message title is not specified"
     When user types any text, but removes All employees from recipients
     Then user sees the error message "Please specify at least one person."
-    And user adds answer text in Answer field
+    When user adds answer text in Answer field
     And user clicks the send button
     Then user sees the error message "The question text is not specified."
-    And user removes answer from answer field
+    When user removes answer from answer field
     And user types question text in Question field
     And user clicks the send button
     Then user sees the error message "The question ......... has no answers."
-
-    And user clicks the send button
-    Then user should be able to create poll
 
     Examples:
       | userType  |

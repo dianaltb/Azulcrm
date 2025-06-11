@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -17,9 +16,6 @@ public class ActivityStreamPage extends BasePage {
     //MESSAGE TAB
     @FindBy(xpath = "(//span[contains(@id, 'message')])[2]")
     public WebElement messageTab;
-
-    //  @FindBy(xpath = "//span[@id='feed-add-post-form-tab-vote']")
-    // public WebElement pollsTab;
 
     @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
     public WebElement textFrame;
@@ -98,7 +94,6 @@ public class ActivityStreamPage extends BasePage {
 
 
     //CREATE POLL TAB
-
     @FindBy(xpath = "//span[@id='feed-add-post-form-tab-vote']")
     public WebElement pollTab;
 

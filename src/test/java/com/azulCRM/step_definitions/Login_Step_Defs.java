@@ -8,7 +8,6 @@ import com.azulCRM.utilities.Waits;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-
 public class Login_Step_Defs {
     private final LoginPage LOGIN = new LoginPage();
 
@@ -17,7 +16,6 @@ public class Login_Step_Defs {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         Waits.waitTitle("Authorization");
         BrowserUtils.verifyTitle("Authorization");
-        //send username and password and login
         LOGIN.login(user);
     }
 

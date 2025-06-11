@@ -11,7 +11,7 @@ Feature: Sending messages functionality
     Then user sees the error message "The message title is not specified"
     When user types any text, but removes All employees from recipients
     Then user sees the error message "Please specify at least one person."
-    When user adds recipients back and fills all the mandatory fields
+    When user types the message
     And user clicks the send button
     Then user is able to send a message
 

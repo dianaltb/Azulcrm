@@ -17,7 +17,7 @@ public class CompanyPage_StepDefinitions {
     private Actions actions;
 
     @Before
-    public void seUpPages(){
+    public void seUpPages() {
         COMPANY = new CompanyPage();
         actions = new Actions(Driver.getDriver());
     }
@@ -27,6 +27,7 @@ public class CompanyPage_StepDefinitions {
         COMPANY.companyTab.click();
 
     }
+
     @Then("the following modules should be visible on the page:")
     public void the_following_modules_should_be_visible_on_the_page(List<String> expectedModules) {
         List<String> actualModules = new ArrayList<>();
@@ -34,8 +35,6 @@ public class CompanyPage_StepDefinitions {
             actions.moveToElement(each).perform();
             actualModules.add(each.getText().trim());
         }
-
         Assert.assertTrue(expectedModules.containsAll(actualModules));
-
     }
 }

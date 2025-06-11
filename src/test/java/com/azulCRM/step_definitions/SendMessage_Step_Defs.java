@@ -31,8 +31,6 @@ public class SendMessage_Step_Defs {
         ACTIVITY.typeMessage(testMessage);
         Waits.waitClickable(ACTIVITY.removeDefaultRecipients);
         ACTIVITY.removeDefaultRecipients.click();
-        Waits.waitClickable(ACTIVITY.sendButton);
-        ACTIVITY.sendButton.click();
     }
 
     @When("user clicks the send button")
@@ -51,12 +49,10 @@ public class SendMessage_Step_Defs {
         Assert.assertEquals(errorMessage.getText(), error);
     }
 
-    @Then("user adds recipients back and fills all the mandatory fields")
-    public void user_adds_recipients_back_and_fills_all_the_mandatory_fields() {
+    @Then("user types the message")
+    public void user_types_the_message() {
         testMessage = " Egor";
         ACTIVITY.typeMessage(testMessage);
-        Waits.waitClickable(ACTIVITY.sendButton);
-        ACTIVITY.sendButton.click();
     }
 
     @Then("user is able to send a message")

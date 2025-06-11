@@ -2,7 +2,6 @@
 package com.azulCRM.step_definitions;
 
 import com.azulCRM.pages.ActivityStreamPage;
-import com.azulCRM.utilities.ConfigurationReader;
 import com.azulCRM.utilities.Driver;
 import com.azulCRM.utilities.Waits;
 import io.cucumber.java.Before;
@@ -10,11 +9,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.AfterClass;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 
 public class CreatePollStepDef {
@@ -72,4 +72,23 @@ public class CreatePollStepDef {
     public void userRemovesAnswerFromAnswerField() {
         ACTIVITY.answerField.clear();
     }
+
+    @Then("user sees the error message The question {string} has no answers.")
+    public void user_sees_the_error_message_for_question_with_no_answers(String questionText) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
+        String expectedMessage = "The question \"" + testMessage + "\" has no answers.";
+
+        String actualMessage = wait.until(driver -> {
+            try {
+                WebElement element = driver.findElement(By.xpath("//span[@class='feed-add-info-text']"));
+                return element.isDisplayed() ? element.getText() : null;
+            } catch (org.openqa.selenium.StaleElementReferenceException e) {
+                return null;
+            }
+        });
+
+        Assert.assertEquals(expectedMessage, actualMessage);
+    }
+
+
 }

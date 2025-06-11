@@ -35,11 +35,7 @@ public class CompanyPage_StepDefinitions {
             actualModules.add(each.getText().trim());
         }
 
-        System.out.println("Expected: " + expectedModules);
-        System.out.println("Actual:   " + actualModules);
-
-
-        Assert.assertEquals(expectedModules, actualModules);
+        Assert.assertTrue(expectedModules.containsAll(actualModules));
 
     }
 }

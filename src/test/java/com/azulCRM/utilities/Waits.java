@@ -10,6 +10,7 @@ import java.time.Duration;
 public class Waits {
 
     private static WebDriverWait getWait(){
+
         return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
     }
 
@@ -18,7 +19,6 @@ public class Waits {
     }
 
     public static void waitVisible(WebElement target){
-
         getWait().until(ExpectedConditions.visibilityOf(target));
     }
     public static WebElement waitVisibilityOfElement(By by){

@@ -37,7 +37,6 @@ Feature:AzulCRM Create Poll functionality
       | help_desk |
       | marketing |
 
-  @PollErrors
   Scenario Outline: Mandatory fields verification under Poll tab
   Mandatory fields: Message title, recipient, 1 question, 1 answer.
     When user logs in as "<userType>"

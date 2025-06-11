@@ -1,6 +1,7 @@
 package com.azulCRM.step_definitions;
 
 import com.azulCRM.pages.ActivityStreamPage;
+import com.azulCRM.utilities.Driver;
 import com.azulCRM.utilities.Waits;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
@@ -8,6 +9,8 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import java.time.Duration;
 
 public class SendMessage_Step_Defs {
     private ActivityStreamPage ACTIVITY;
@@ -42,11 +45,13 @@ public class SendMessage_Step_Defs {
     }
 
     @Then("user sees the error message {string}")
-    public void user_sees_the_error_message(String error) {
-        By locator = By.xpath("//span[@class='feed-add-info-text']");
-        WebElement errorMessage = Waits.waitVisibilityOfElement(locator);
-        Assert.assertTrue(errorMessage.isDisplayed());
-        Assert.assertEquals(errorMessage.getText(), error);
+    public void user_sees_the_error_message(String error) throws InterruptedException {
+        Thread.sleep(500);
+        Waits.waitVisible(ACTIVITY.errorMessage);
+        System.out.println("errorMessage = " + ACTIVITY.errorMessage.getText());
+        System.out.println("error = " + error);
+        Assert.assertTrue(ACTIVITY.errorMessage.isDisplayed());
+        Assert.assertEquals(ACTIVITY.errorMessage.getText(), error);
     }
 
     @Then("user types the message")

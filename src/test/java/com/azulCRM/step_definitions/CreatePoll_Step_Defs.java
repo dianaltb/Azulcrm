@@ -2,6 +2,7 @@ package com.azulCRM.step_definitions;
 
 import com.azulCRM.pages.ActivityStreamPage;
 
+import com.azulCRM.utilities.Driver;
 import com.azulCRM.utilities.Waits;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -11,6 +12,10 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import java.time.Duration;
+
+import static java.lang.Thread.sleep;
 
 public class CreatePoll_Step_Defs {
     public ActivityStreamPage ACTIVITY;
@@ -61,12 +66,14 @@ public class CreatePoll_Step_Defs {
     }
 
     @Then("user sees the error message The question has no answers.")
-    public void user_sees_the_error_message_for_question_with_no_answers() {
+    public void user_sees_the_error_message_for_question_with_no_answers() throws InterruptedException {
         String expectedMessage = "The question \"" + testMessage + "\" has no answers.";
-
-        By locator = By.xpath("//span[@class='feed-add-info-text']");
-        WebElement errorMessage = Waits.waitVisibilityOfElement(locator);
-        Assert.assertTrue(errorMessage.isDisplayed());
-        Assert.assertEquals(errorMessage.getText(), expectedMessage);
+        Thread.sleep(500);
+        Waits.waitVisible(ACTIVITY.errorMessage);
+        String actualError = ACTIVITY.errorMessage.getText();
+        System.out.println("actualError = " + actualError);
+        System.out.println("expectedMessage = " + expectedMessage);
+        Assert.assertTrue(ACTIVITY.errorMessage.isDisplayed());
+        Assert.assertEquals(actualError, expectedMessage);
     }
 }

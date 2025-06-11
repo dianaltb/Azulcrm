@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/azulCRM/step_definitions",
-        tags = "@SendMessage",
+        tags = "@TopNavTabs",
         dryRun = false,
         publish = false
 )

@@ -9,7 +9,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class CreatePollStepDef {
     public ActivityStreamPage ACTIVITY;
@@ -59,22 +60,13 @@ public class CreatePollStepDef {
         ACTIVITY.answerField.clear();
     }
 
-    @Then("user sees the error message The question {string} has no answers.")
-    public void user_sees_the_error_message_for_question_with_no_answers(String questionText) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
+    @Then("user sees the error message The question has no answers.")
+    public void user_sees_the_error_message_for_question_with_no_answers() {
         String expectedMessage = "The question \"" + testMessage + "\" has no answers.";
 
-        String actualMessage = wait.until(driver -> {
-            try {
-                WebElement element = driver.findElement(By.xpath("//span[@class='feed-add-info-text']"));
-                return element.isDisplayed() ? element.getText() : null;
-            } catch (org.openqa.selenium.StaleElementReferenceException e) {
-                return null;
-            }
-        });
-
-        Assert.assertEquals(expectedMessage, actualMessage);
+        By locator = By.xpath("//span[@class='feed-add-info-text']");
+        WebElement errorMessage = Waits.waitVisibilityOfElement(locator);
+        Assert.assertTrue(errorMessage.isDisplayed());
+        Assert.assertEquals(errorMessage.getText(), expectedMessage);
     }
-
-
 }

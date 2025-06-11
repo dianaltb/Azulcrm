@@ -10,6 +10,7 @@ Feature: Sending messages functionality
     And user clicks the send button
     Then user sees the error message "The message title is not specified"
     When user types any text, but removes All employees from recipients
+    And user clicks the send button
     Then user sees the error message "Please specify at least one person."
     When user types the message
     And user clicks the send button

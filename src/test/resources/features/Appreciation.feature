@@ -1,0 +1,47 @@
+@appreciation
+Feature: Appreciation sending functionality
+
+  Agile story: As a user, I should be able to send appreciation by clicking on Appreciation tab under Active Stream
+  Account: HR
+
+  Scenario Outline: Appreciation messages sending verification
+    Given user logs in as "<userType>"
+    And user navigates to appreciation
+    And user types in an "appreciation" message
+    And user sends the appreciation message
+    Then verifies if message is displayed
+
+
+    Examples:
+      | userType  |
+      | hr        |
+      | help_desk |
+      | marketing |
+
+
+  Scenario Outline: Appreciation empty message sending verification
+    Given user logs in as "<userType>"
+    And user navigates to appreciation
+    And user types in an " " emptyMessage
+    And user sends the emptyMessage
+    Then verifies if error message is displayed
+
+    Examples:
+      | userType  |
+      | hr        |
+      | help_desk |
+      | marketing |
+
+  @appreciation
+  Scenario Outline: Appreciation message sending cancellation
+    Given user logs in as "<userType>"
+    And user navigates to appreciation
+    And user types in an "appreciation" message
+    And user cancels sending the appreciation message
+
+
+    Examples:
+      | userType  |
+      | hr        |
+      | help_desk |
+      | marketing |

@@ -90,6 +90,12 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "//span[@class='del-but']") //dynamic element
     public WebElement deleteButton;
 
+    @FindBy(xpath = "//a[@id='bx-grat-tag']")
+    public WebElement recipientDropdown;
+
+    @FindBy(xpath = "//div[.='helpdesk22@cydeo.com']")
+    public WebElement helpdesk22Dropdown;
+
 
     //CREATE POLL TAB
 
@@ -104,5 +110,4 @@ public class ActivityStreamPage extends BasePage {
 
     @FindBy(xpath = "//input[@id='multi_0']")
     public WebElement multipleChoiceBox;
-
 }

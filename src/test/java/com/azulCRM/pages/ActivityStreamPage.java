@@ -107,7 +107,20 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "//input[@id='multi_0']")
     public WebElement multipleChoiceBox;
 
+
+    // Top-level Activity Stream options: MESSAGE, TASK, EVENT, POLL, MORE
+    @FindBy(xpath = "//div[@id='feed-add-post-form-tab']/span[contains(@class, 'feed-add-post-form-link')]")
+    public List<WebElement> topMenuOptions;
+
+    // "MORE" tab in the Act_Stream top menu (not in Appreciation_tab)
+    @FindBy(xpath = "//span[contains(@class,'feed-add-post-form-link-more')]")
+    public WebElement moreTab;
+
+    @FindBy(xpath = "//div[contains(@class, 'menu-popup-items')]/span[@class='menu-popup-item-text']")
+    public List<WebElement> moreDropdownOptions;
+
     @FindBy(xpath = " //span[@class='feed-add-info-text']")
     public WebElement errorMessage;
+
 
 }

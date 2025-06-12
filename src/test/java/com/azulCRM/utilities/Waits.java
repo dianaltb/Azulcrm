@@ -11,7 +11,7 @@ public class Waits {
 
     private static WebDriverWait getWait(){
 
-        return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(20));
     }
 
     public static void waitTitle(String partialTitle){

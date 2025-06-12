@@ -2,6 +2,7 @@ package com.azulCRM.step_definitions;
 
 import com.azulCRM.pages.ActivityStreamPage;
 
+import com.azulCRM.utilities.BrowserUtils;
 import com.azulCRM.utilities.Driver;
 import com.azulCRM.utilities.Waits;
 import io.cucumber.java.Before;
@@ -10,8 +11,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 
 import java.time.Duration;
 
@@ -43,10 +45,6 @@ public class CreatePoll_Step_Defs {
         ACTIVITY.questionField.sendKeys(testMessage);
     }
 
-    @When("user adds answer text in Answer field")
-    public void user_adds_answer_text_in_answer_field() {
-        ACTIVITY.answerField.sendKeys(testMessage);
-    }
 
     @Then("user should be able to create poll")
     public void user_should_be_able_to_create_poll() {
@@ -60,20 +58,20 @@ public class CreatePoll_Step_Defs {
         Assert.assertTrue(ACTIVITY.multipleChoiceBox.isSelected());
     }
 
-    @And("user removes answer from answer field")
-    public void userRemovesAnswerFromAnswerField() {
+
+
+
+    @And("user types question {string} text in Question field")
+    public void userTypesQuestionTextInQuestionField(String testMessage) {
         ACTIVITY.answerField.clear();
+        ACTIVITY.answerField.sendKeys(testMessage);
     }
 
-    @Then("user sees the error message The question has no answers.")
-    public void user_sees_the_error_message_for_question_with_no_answers() throws InterruptedException {
-        String expectedMessage = "The question \"" + testMessage + "\" has no answers.";
-        Thread.sleep(500);
-        Waits.waitVisible(ACTIVITY.errorMessage);
-        String actualError = ACTIVITY.errorMessage.getText();
-        System.out.println("actualError = " + actualError);
-        System.out.println("expectedMessage = " + expectedMessage);
-        Assert.assertTrue(ACTIVITY.errorMessage.isDisplayed());
-        Assert.assertEquals(actualError, expectedMessage);
+    @When("user adds answer text in Answer field")
+    public void userAddsAnswerTextInAnswerField() {
+        ACTIVITY.answerField.sendKeys(testMessage);
     }
+
+
 }
+

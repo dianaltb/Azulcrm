@@ -5,6 +5,7 @@ import com.azulCRM.utilities.Waits;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,6 +14,10 @@ import java.util.List;
 
 public class ActivityStreamPage extends BasePage {
     private final WebDriverWait WAIT = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+
+    public ActivityStreamPage(){
+        PageFactory.initElements(Driver.getDriver(),this);
+    }
 
     //MESSAGE TAB
     @FindBy(xpath = "(//span[contains(@id, 'message')])[2]")

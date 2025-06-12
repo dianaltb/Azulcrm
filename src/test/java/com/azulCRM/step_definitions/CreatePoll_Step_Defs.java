@@ -58,7 +58,10 @@ public class CreatePoll_Step_Defs {
         Assert.assertTrue(ACTIVITY.multipleChoiceBox.isSelected());
     }
 
-
+    @And("user removes answer from answer field")
+    public void userRemovesAnswerFromAnswerField() {
+        ACTIVITY.answerField.clear();
+    }
 
 
     @And("user types question {string} text in Question field")
@@ -73,5 +76,17 @@ public class CreatePoll_Step_Defs {
     }
 
 
+    @Then("user sees the error message The question has no answers.")
+    public void user_sees_the_error_message_for_question_with_no_answers() throws InterruptedException {
+        String expectedMessage = "The question \"" + testMessage + "\" has no answers.";
+        Thread.sleep(500);
+        Waits.waitVisible(ACTIVITY.errorMessage);
+        String actualError = ACTIVITY.errorMessage.getText();
+        System.out.println("actualError = " + actualError);
+        System.out.println("expectedMessage = " + expectedMessage);
+        Assert.assertTrue(ACTIVITY.errorMessage.isDisplayed());
+        Assert.assertEquals(actualError, expectedMessage);
+    }
 }
+
 

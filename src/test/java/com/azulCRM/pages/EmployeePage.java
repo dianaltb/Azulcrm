@@ -8,7 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class EmployeePage extends BasePage {
+public EmployeePage(){
+    PageFactory.initElements(Driver.getDriver(),this);
 
+}
  @FindBy(xpath = "//div[@id='top_menu_id_company']//span[@class='main-buttons-item-text-title']\n")
     public List<WebElement> modulesList;
 

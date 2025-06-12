@@ -49,10 +49,11 @@ public class SendMessage_Step_Defs {
     @Then("user sees the error message {string}")
     public void user_sees_the_error_message(String error) throws InterruptedException {
         BrowserUtils.sleep(3);
-        By locator = By.xpath("//span[@class='feed-add-info-text']");
-        WebElement errorMessage = Waits.waitVisibilityOfElement(locator);
-        Assert.assertTrue(errorMessage.isDisplayed());
-        Assert.assertEquals(errorMessage.getText(), error);
+        Waits.waitVisible(ACTIVITY.errorMessage);
+        System.out.println("errorMessage = " + ACTIVITY.errorMessage.getText());
+        System.out.println("error = " + error);
+        Assert.assertTrue(ACTIVITY.errorMessage.isDisplayed());
+        Assert.assertEquals(ACTIVITY.errorMessage.getText(), error);
     }
 
     @Then("user types the message")

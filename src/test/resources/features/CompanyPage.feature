@@ -1,4 +1,6 @@
 @company
+  #Note: Module name "Photo Company" in AC appears as "Photo Gallery" on the website.
+  #Bug ticket: B39G10-414 raised to address this mismatch.
 Feature: Company Page Modules visibility
 
   Agile story: As a user, I should be able to access to the Company Page. So, I can verify all the modules are visible.
@@ -11,12 +13,11 @@ Feature: Company Page Modules visibility
       |Official Information |
       |Our Life             |
       |About Company        |
-      |Photo Gallery        |
+      |Photo Company        |
       |Video                |
       |Career               |
       |Business News (RSS)  |
       |More                 |
-
 
 
     Examples: for all 3 user types

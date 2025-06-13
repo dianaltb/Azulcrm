@@ -11,8 +11,10 @@ Feature: Adding link in message functionality
     When user enters "<linkText>" in text box
     And user enters "<linkUrl>" in URL box
     And user clicks on Save button
-    Then user sees the "<linkText>" as a clickable link.
+    Then user sees the "<linkText>" as a link.
     When user clicks the send button
+    #jun13
+    Then user sees the "<linkText>" as a clickable link.
 
 
     Examples:

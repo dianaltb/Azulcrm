@@ -71,6 +71,9 @@ public class ActivityStreamPage extends BasePage {
 
     @FindBy(xpath = "//input[@value='Save']")
     public WebElement saveBtn;
+    //jun13
+    @FindBy(xpath = "//div[@class='feed-post-text-block-inner-inner']/a[.='google search page']" )
+    public WebElement sentLink;
 
 
     //APPRECIATION TAB
